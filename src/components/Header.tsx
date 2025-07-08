@@ -5,7 +5,6 @@ import { Menu, X } from "lucide-react";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [language, setLanguage] = useState<'UA' | 'ENG'>('UA');
 
   const navigationItems = [
     { label: "Про проєкт", href: "#about" },
@@ -27,9 +26,9 @@ export const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="flex items-center justify-between h-16">
-          {/* Logo/Brand */}
-          <div className="font-bold text-lg text-foreground">
-            Логістика для ветеранів
+          {/* Logo placeholder - ready for future logo */}
+          <div className="w-32 h-8">
+            {/* Logo will be placed here */}
           </div>
 
           {/* Desktop Navigation */}
@@ -46,36 +45,13 @@ export const Header = () => {
           </nav>
 
           {/* Desktop Actions */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center">
             <Button 
               className="bg-primary text-primary-foreground hover:bg-primary/90"
               onClick={() => scrollToSection('#training')}
             >
               Обрати навчання
             </Button>
-            
-            <div className="flex items-center border border-border rounded-md overflow-hidden">
-              <button
-                onClick={() => setLanguage('UA')}
-                className={`px-3 py-1 text-sm font-medium transition-colors ${
-                  language === 'UA' 
-                    ? 'bg-primary text-primary-foreground' 
-                    : 'text-muted-foreground hover:text-foreground'
-                }`}
-              >
-                UA
-              </button>
-              <button
-                onClick={() => setLanguage('ENG')}
-                className={`px-3 py-1 text-sm font-medium transition-colors ${
-                  language === 'ENG' 
-                    ? 'bg-primary text-primary-foreground' 
-                    : 'text-muted-foreground hover:text-foreground'
-                }`}
-              >
-                ENG
-              </button>
-            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -101,39 +77,13 @@ export const Header = () => {
                 </button>
               ))}
               
-              <div className="flex flex-col space-y-3 pt-4 border-t border-border">
+              <div className="pt-4 border-t border-border">
                 <Button 
-                  className="bg-primary text-primary-foreground hover:bg-primary/90"
+                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
                   onClick={() => scrollToSection('#training')}
                 >
                   Обрати навчання
                 </Button>
-                
-                <div className="flex items-center space-x-2">
-                  <span className="text-sm text-muted-foreground">Мова:</span>
-                  <div className="flex items-center border border-border rounded-md overflow-hidden">
-                    <button
-                      onClick={() => setLanguage('UA')}
-                      className={`px-3 py-1 text-sm font-medium transition-colors ${
-                        language === 'UA' 
-                          ? 'bg-primary text-primary-foreground' 
-                          : 'text-muted-foreground hover:text-foreground'
-                      }`}
-                    >
-                      UA
-                    </button>
-                    <button
-                      onClick={() => setLanguage('ENG')}
-                      className={`px-3 py-1 text-sm font-medium transition-colors ${
-                        language === 'ENG' 
-                          ? 'bg-primary text-primary-foreground' 
-                          : 'text-muted-foreground hover:text-foreground'
-                      }`}
-                    >
-                      ENG
-                    </button>
-                  </div>
-                </div>
               </div>
             </nav>
           </div>

@@ -9,25 +9,25 @@ export const Training = () => {
       id: "driver-ce",
       title: "Водій вантажівки категорії «СЕ»",
       icon: Truck,
-      image: "/placeholder.svg"
+      image: "/lovable-uploads/dbcfaccc-a6c0-4ab5-a3fc-cf05d44cb479.png"
     },
     {
       id: "qualification-card", 
       title: "Отримання кваліфікаційної картки водія (код 95)",
       icon: Award,
-      image: "/placeholder.svg"
+      image: "/lovable-uploads/c5c8d784-7586-4bb7-9c04-2f22805e51b8.png"
     },
     {
       id: "logist",
       title: "Логіст", 
       icon: Briefcase,
-      image: "/placeholder.svg"
+      image: "/lovable-uploads/527b72f6-742d-48a0-aca1-e0bfc485f7a7.png"
     },
     {
       id: "forklift-driver",
       title: "Водій навантажувача",
       icon: Bot,
-      image: "/placeholder.svg"
+      image: "/lovable-uploads/ee27d84e-3253-419a-b00c-02597001c592.png"
     }
   ];
 

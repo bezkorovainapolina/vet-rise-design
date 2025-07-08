@@ -12,8 +12,6 @@ export const Programs = () => {
       title: "Водій категорії «СЕ»",
       icon: Truck,
       description: "Професійна підготовка водіїв для керування великовантажним транспортом",
-      regions: ["Київ", "Харків", "Дніпро", "Одеса", "Львів"],
-      duration: "2 місяці",
       content: {
         description: `Водійське посвідчення категорії «СЕ» дозволяє керувати автомобілями категорії «С» (вантажні автомобілі масою понад 3,5 тонни) з причепом масою понад 750 кг.
 
@@ -89,8 +87,6 @@ export const Programs = () => {
       title: "Отримання кваліфікаційної картки водія або код 95", 
       icon: Award,
       description: "Професійна компетенція для міжнародних та внутрішніх перевезень",
-      regions: ["Київ", "Харків", "Дніпро"],
-      duration: "1 місяць",
       content: {
         description: `Кваліфікаційна карта водія або код 95 – це документ, який підтверджує професійну компетенцію водія для здійснення міжнародних перевезень вантажів транспортом категорій «C», «D» і «E».
 
@@ -114,8 +110,6 @@ export const Programs = () => {
       title: "Логіст",
       icon: Briefcase,
       description: "Управління ланцюгами поставок та логістичними процесами",
-      regions: ["Київ", "Харків"],
-      duration: "3 місяці",
       content: {
         description: "Професійна підготовка логістів для управління ланцюгами поставок.",
         stages: ["Теоретична база", "Практичні кейси", "Стажування"],
@@ -130,8 +124,6 @@ export const Programs = () => {
       title: "Водій навантажувача", 
       icon: Bot,
       description: "Керування складською технікою та навантажувальним обладнанням",
-      regions: ["Київ", "Дніпро"],
-      duration: "1 місяць",
       content: {
         description: "Навчання роботі з навантажувальною технікою на складах.",
         stages: ["Теорія безпеки", "Практика на техніці", "Сертифікація"],
@@ -172,17 +164,6 @@ export const Programs = () => {
                   <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
                     Реєстрація
                   </Button>
-                </div>
-                
-                <div className="flex flex-wrap gap-2 mt-4">
-                  <Badge variant="secondary" className="bg-accent/20 text-accent-foreground">
-                    Тривалість: {program.duration}
-                  </Badge>
-                  {program.regions.map((region) => (
-                    <Badge key={region} variant="outline" className="border-primary/30 text-primary">
-                      {region}
-                    </Badge>
-                  ))}
                 </div>
               </CardHeader>
 
