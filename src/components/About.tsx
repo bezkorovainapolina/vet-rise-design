@@ -27,13 +27,13 @@ export const About = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-background">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
             Про проєкт
           </h2>
-          <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Наш проєкт створений для надання ветеранам і ветеранкам України можливості 
             отримати нову професію в сфері логістики з подальшим гарантованим працевлаштуванням.
           </p>
@@ -41,13 +41,13 @@ export const About = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
-            <Card key={index} className="h-full hover:shadow-lg transition-shadow">
+            <Card key={index} className="h-full hover:shadow-lg transition-all duration-200 border-border hover:border-primary/30">
               <CardContent className="p-6 text-center">
-                <feature.icon className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-slate-900 mb-3">
+                <feature.icon className="h-12 w-12 text-primary mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-foreground mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-slate-600">
+                <p className="text-muted-foreground">
                   {feature.description}
                 </p>
               </CardContent>

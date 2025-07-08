@@ -1,58 +1,28 @@
 
-import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
-import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { useState } from "react";
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
+    fullName: "",
     phone: "",
+    email: "",
     program: "",
     region: "",
-    message: "",
+    hasDriverLicense: false,
+    isVeteran: false,
     agreement: false
   });
 
-  const { toast } = useToast();
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (!formData.agreement) {
-      toast({
-        title: "Помилка",
-        description: "Необхідно погодитися з умовами обробки персональних даних",
-        variant: "destructive"
-      });
-      return;
-    }
-
-    // Тут буде логіка відправки форми
-    toast({
-      title: "Заявку надіслано!",
-      description: "Ми зв'яжемося з вами найближчим часом",
-    });
-
-    // Очистити форму
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      program: "",
-      region: "",
-      message: "",
-      agreement: false
-    });
+    console.log("Form submitted:", formData);
+    // Handle form submission
   };
 
   const handleInputChange = (field: string, value: string | boolean) => {
@@ -60,153 +30,193 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-slate-50">
+    <section className="py-20 bg-background" id="contact">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-            Зв'язатися з нами
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+            Контакти та реєстрація
           </h2>
-          <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-            Маєте питання або готові подати заявку? Заповніть форму, і ми зв'яжемося з вами
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Зв'яжіться з нами для отримання додаткової інформації або подайте заявку на участь у програмі
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Контактна інформація */}
-          <div>
-            <Card>
+          {/* Contact Information */}
+          <div className="space-y-8">
+            <Card className="border-border">
               <CardHeader>
-                <CardTitle className="text-2xl">Контактна інформація</CardTitle>
+                <CardTitle className="text-foreground">Контактна інформація</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <Mail className="h-6 w-6 text-blue-600" />
+                <div className="flex items-start gap-4">
+                  <div className="p-2 bg-primary/10 rounded-lg">
+                    <MapPin className="h-5 w-5 text-primary" />
+                  </div>
                   <div>
-                    <p className="font-semibold">Email</p>
-                    <p className="text-slate-600">info@logistics-veterans.ua</p>
+                    <h3 className="font-medium text-foreground">Адреса</h3>
+                    <p className="text-muted-foreground">м. Київ, вул. Хрещатик, 1</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <Phone className="h-6 w-6 text-blue-600" />
+
+                <div className="flex items-start gap-4">
+                  <div className="p-2 bg-primary/10 rounded-lg">
+                    <Phone className="h-5 w-5 text-primary" />
+                  </div>
                   <div>
-                    <p className="font-semibold">Телефон</p>
-                    <p className="text-slate-600">+380 (44) 123-45-67</p>
+                    <h3 className="font-medium text-foreground">Телефон</h3>
+                    <p className="text-muted-foreground">+380 (44) 123-45-67</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <MapPin className="h-6 w-6 text-blue-600" />
+
+                <div className="flex items-start gap-4">
+                  <div className="p-2 bg-primary/10 rounded-lg">
+                    <Mail className="h-5 w-5 text-primary" />
+                  </div>
                   <div>
-                    <p className="font-semibold">Адреса</p>
-                    <p className="text-slate-600">м. Київ, вул. Хрещатик, 1</p>
+                    <h3 className="font-medium text-foreground">Email</h3>
+                    <p className="text-muted-foreground">info@logistics-veterans.ua</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="p-2 bg-primary/10 rounded-lg">
+                    <Clock className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-medium text-foreground">Години роботи</h3>
+                    <p className="text-muted-foreground">Пн-Пт: 9:00 - 18:00</p>
+                    <p className="text-muted-foreground">Сб-Нд: вихідні</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
           </div>
 
-          {/* Форма заявки */}
-          <Card>
+          {/* Registration Form */}
+          <Card className="border-border">
             <CardHeader>
-              <CardTitle className="text-2xl">Подати заявку</CardTitle>
+              <CardTitle className="text-foreground">Форма реєстрації</CardTitle>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="firstName">Ім'я *</Label>
-                    <Input
-                      id="firstName"
-                      value={formData.firstName}
-                      onChange={(e) => handleInputChange("firstName", e.target.value)}
-                      required
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="lastName">Прізвище *</Label>
-                    <Input
-                      id="lastName"
-                      value={formData.lastName}
-                      onChange={(e) => handleInputChange("lastName", e.target.value)}
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <Label htmlFor="email">Email *</Label>
+                <div className="space-y-2">
+                  <Label htmlFor="fullName" className="text-foreground">Повне ім'я *</Label>
                   <Input
-                    id="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) => handleInputChange("email", e.target.value)}
+                    id="fullName"
+                    type="text"
                     required
+                    value={formData.fullName}
+                    onChange={(e) => handleInputChange('fullName', e.target.value)}
+                    className="border-input focus:border-primary focus:ring-primary"
+                    placeholder="Введіть ваше повне ім'я"
                   />
                 </div>
 
-                <div>
-                  <Label htmlFor="phone">Телефон *</Label>
+                <div className="space-y-2">
+                  <Label htmlFor="phone" className="text-foreground">Телефон *</Label>
                   <Input
                     id="phone"
                     type="tel"
-                    value={formData.phone}
-                    onChange={(e) => handleInputChange("phone", e.target.value)}
                     required
+                    value={formData.phone}
+                    onChange={(e) => handleInputChange('phone', e.target.value)}
+                    className="border-input focus:border-primary focus:ring-primary"
+                    placeholder="+380 XX XXX XX XX"
                   />
                 </div>
 
-                <div>
-                  <Label htmlFor="program">Програма навчання *</Label>
-                  <Select onValueChange={(value) => handleInputChange("program", value)}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Оберіть програму" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="driver-ce">Водій категорії «СЕ»</SelectItem>
-                      <SelectItem value="qualification-card">Кваліфікаційна картка водія</SelectItem>
-                      <SelectItem value="logist">Логіст</SelectItem>
-                      <SelectItem value="forklift-driver">Водій навантажувача</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div>
-                  <Label htmlFor="region">Регіон *</Label>
-                  <Select onValueChange={(value) => handleInputChange("region", value)}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Оберіть регіон" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="kyiv">Київ та Київська область</SelectItem>
-                      <SelectItem value="dnipro">Дніпро та Дніпропетровська область</SelectItem>
-                      <SelectItem value="lviv">Львів та Львівська область</SelectItem>
-                      <SelectItem value="odesa">Одеса та Одеська область</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div>
-                  <Label htmlFor="message">Додаткова інформація</Label>
-                  <Textarea
-                    id="message"
-                    value={formData.message}
-                    onChange={(e) => handleInputChange("message", e.target.value)}
-                    placeholder="Розкажіть про свій досвід, мотивацію або поставте питання..."
-                    rows={4}
+                <div className="space-y-2">
+                  <Label htmlFor="email" className="text-foreground">Email *</Label>
+                  <Input
+                    id="email"
+                    type="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) => handleInputChange('email', e.target.value)}
+                    className="border-input focus:border-primary focus:ring-primary"
+                    placeholder="your.email@example.com"
                   />
                 </div>
 
-                <div className="flex items-center space-x-2">
-                  <Checkbox
-                    id="agreement"
-                    checked={formData.agreement}
-                    onCheckedChange={(checked) => handleInputChange("agreement", !!checked)}
-                  />
-                  <Label htmlFor="agreement" className="text-sm">
-                    Я погоджуюся з обробкою персональних даних та умовами участі в проєкті *
-                  </Label>
+                <div className="space-y-2">
+                  <Label htmlFor="program" className="text-foreground">Програма навчання *</Label>
+                  <select
+                    id="program"
+                    required
+                    value={formData.program}
+                    onChange={(e) => handleInputChange('program', e.target.value)}
+                    className="w-full px-3 py-2 border border-input rounded-md focus:border-primary focus:ring-1 focus:ring-primary bg-background text-foreground"
+                  >
+                    <option value="">Оберіть програму</option>
+                    <option value="driver-ce">Водій категорії «СЕ»</option>
+                    <option value="qualification-card">Кваліфікаційна картка водія</option>
+                    <option value="logist">Логіст</option>
+                    <option value="forklift-driver">Водій навантажувача</option>
+                  </select>
                 </div>
 
-                <Button type="submit" size="lg" className="w-full">
+                <div className="space-y-2">
+                  <Label htmlFor="region" className="text-foreground">Регіон навчання *</Label>
+                  <select
+                    id="region"
+                    required
+                    value={formData.region}
+                    onChange={(e) => handleInputChange('region', e.target.value)}
+                    className="w-full px-3 py-2 border border-input rounded-md focus:border-primary focus:ring-1 focus:ring-primary bg-background text-foreground"
+                  >
+                    <option value="">Оберіть регіон</option>
+                    <option value="kyiv">Київ</option>
+                    <option value="kharkiv">Харків</option>
+                    <option value="dnipro">Дніпро</option>
+                    <option value="odesa">Одеса</option>
+                    <option value="lviv">Львів</option>
+                  </select>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-2">
+                    <Checkbox
+                      id="hasDriverLicense"
+                      checked={formData.hasDriverLicense}
+                      onCheckedChange={(checked) => handleInputChange('hasDriverLicense', checked as boolean)}
+                      className="border-primary data-[state=checked]:bg-primary data-[state=checked]:border-primary"
+                    />
+                    <Label htmlFor="hasDriverLicense" className="text-muted-foreground text-sm">
+                      Маю водійське посвідчення відповідної категорії
+                    </Label>
+                  </div>
+
+                  <div className="flex items-center space-x-2">
+                    <Checkbox
+                      id="isVeteran"
+                      checked={formData.isVeteran}
+                      onCheckedChange={(checked) => handleInputChange('isVeteran', checked as boolean)}
+                      className="border-primary data-[state=checked]:bg-primary data-[state=checked]:border-primary"
+                    />
+                    <Label htmlFor="isVeteran" className="text-muted-foreground text-sm">
+                      Є ветераном/нкою російсько-української війни
+                    </Label>
+                  </div>
+
+                  <div className="flex items-center space-x-2">
+                    <Checkbox
+                      id="agreement"
+                      checked={formData.agreement}
+                      onCheckedChange={(checked) => handleInputChange('agreement', checked as boolean)}
+                      className="border-primary data-[state=checked]:bg-primary data-[state=checked]:border-primary"
+                    />
+                    <Label htmlFor="agreement" className="text-muted-foreground text-sm">
+                      Погоджуюся з умовами участі та обробкою персональних даних *
+                    </Label>
+                  </div>
+                </div>
+
+                <Button 
+                  type="submit" 
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                  disabled={!formData.agreement}
+                >
                   Подати заявку
                 </Button>
               </form>
