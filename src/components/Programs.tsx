@@ -13,7 +13,8 @@ import {
   CheckCircle,
   Users,
   DollarSign,
-  ArrowRight
+  ArrowRight,
+  Briefcase
 } from "lucide-react";
 
 export const Programs = () => {
