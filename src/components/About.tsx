@@ -7,52 +7,64 @@ export const About = () => {
     {
       icon: Target,
       title: "Цільова підготовка",
-      description: "Навчання за напрямками з найвищим попитом на ринку праці"
+      description: "Навчання за напрямками з найвищим попитом на ринку праці в сфері логістики та транспорту"
     },
     {
       icon: Users,
       title: "Досвідчені викладачі",
-      description: "Професіонали з багаторічним досвідом у галузі логістики"
+      description: "Професіонали з багаторічним досвідом у галузі логістики та міжнародних перевезень"
     },
     {
       icon: Award,
-      title: "Сертифікація",
-      description: "Офіційні документи державного зразка після завершення навчання"
+      title: "Офіційна сертифікація",
+      description: "Документи державного зразка та міжнародні сертифікати після завершення навчання"
     },
     {
       icon: Briefcase,
-      title: "Працевлаштування",
-      description: "Гарантоване працевлаштування в компаніях-партнерах проєкту"
+      title: "Гарантоване працевлаштування",
+      description: "Працевлаштування в компаніях-партнерах проєкту з конкурентною заробітною платою"
     }
   ];
 
   return (
-    <section className="py-20 bg-background" id="about">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-            Про проєкт
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Наш проєкт створений для надання ветеранам і ветеранкам України можливості 
-            отримати нову професію в сфері логістики з подальшим гарантованим працевлаштуванням.
-          </p>
-        </div>
+    <section className="py-24 bg-muted/30" id="about">
+      <div className="section-container">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="space-y-8">
+            <div className="space-y-6">
+              <h2 className="text-3xl md:text-5xl font-bold text-foreground">
+                Про проєкт
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Наш проєкт створений для надання ветеранам і ветеранкам України можливості 
+                отримати нову професію в сфері логістики з подальшим гарантованим працевлаштуванням.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Ми пропонуємо комплексний підхід до професійної перепідготовки, що включає 
+                теоретичну підготовку, практичне навчання та подальший супровід у працевлаштуванні.
+              </p>
+            </div>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((feature, index) => (
-            <Card key={index} className="h-full hover:shadow-lg transition-all duration-200 border-border hover:border-primary/30">
-              <CardContent className="p-6 text-center">
-                <feature.icon className="h-12 w-12 text-primary mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-foreground mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-muted-foreground">
-                  {feature.description}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {features.map((feature, index) => (
+              <Card key={index} className="card-modern p-6 hover:border-primary/30 group">
+                <CardContent className="p-0 space-y-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <feature.icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-semibold text-foreground">
+                      {feature.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
     </section>

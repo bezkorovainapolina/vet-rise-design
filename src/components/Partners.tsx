@@ -30,26 +30,26 @@ export const Partners = () => {
   ];
 
   return (
-    <section className="py-20 bg-muted/30" id="partners">
-      <div className="container mx-auto px-4 max-w-6xl">
+    <section className="py-24 gradient-bg" id="partners">
+      <div className="section-container">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-            Наші партнери
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+            Партнери
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Провідні компанії галузі, які підтримують проєкт та забезпечують 
-            працевлаштування випускників
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Провідні організації та установи, які підтримують проєкт та забезпечують 
+            його успішну реалізацію
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
           {partners.map((partner, index) => (
-            <Card key={index} className="hover:shadow-lg transition-shadow border-border">
-              <CardContent className="p-6 flex items-center justify-center h-32">
+            <Card key={index} className="card-modern group hover:border-primary/30">
+              <CardContent className="p-8 flex items-center justify-center h-32">
                 <img 
                   src={partner.logo} 
                   alt={partner.name}
-                  className="max-w-full max-h-full object-contain filter hover:filter-none transition-all"
+                  className="max-w-full max-h-full object-contain transition-all duration-300 group-hover:scale-105"
                 />
               </CardContent>
             </Card>

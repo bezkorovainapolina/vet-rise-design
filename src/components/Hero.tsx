@@ -1,6 +1,5 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowDown } from "lucide-react";
 
 export const Hero = () => {
   const scrollToTraining = () => {
@@ -11,25 +10,57 @@ export const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/10 to-accent/10 pt-16">
-      <div className="container mx-auto px-4 text-center max-w-4xl">
-        <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-          Професійна перепідготовка ветеранів у сфері логістики
-        </h1>
-        <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-          Безкоштовні курси для ветеранів і ветеранок України з гарантованим працевлаштуванням
-        </p>
-        <div className="flex justify-center">
-          <Button 
-            size="lg" 
-            className="px-8 py-4 text-lg bg-primary hover:bg-primary/90"
-            onClick={scrollToTraining}
-          >
-            Подати заявку
-          </Button>
-        </div>
-        <div className="mt-16 animate-bounce">
-          <ArrowDown className="h-8 w-8 text-muted-foreground mx-auto" />
+    <section className="relative min-h-screen flex items-center justify-center gradient-bg pt-20">
+      <div className="section-container">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Content */}
+          <div className="space-y-8">
+            <div className="space-y-6">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
+                Професійна 
+                <span className="text-primary block">перепідготовка</span>
+                <span className="text-secondary">ветеранів</span>
+              </h1>
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl leading-relaxed">
+                Безкоштовні курси для ветеранів і ветеранок України з гарантованим працевлаштуванням у сфері логістики
+              </p>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button 
+                size="lg" 
+                className="button-modern bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg"
+                onClick={scrollToTraining}
+              >
+                Подати заявку
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="button-modern border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 text-lg"
+                onClick={() => document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Дізнатись більше
+              </Button>
+            </div>
+          </div>
+
+          {/* Visual Element */}
+          <div className="relative">
+            <div className="hero-card p-8 h-96">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/5 to-primary/5 rounded-3xl"></div>
+              <div className="relative h-full flex items-center justify-center">
+                <div className="text-center space-y-4">
+                  <div className="w-24 h-24 bg-primary/20 rounded-3xl mx-auto flex items-center justify-center">
+                    <div className="w-12 h-12 bg-primary rounded-2xl"></div>
+                  </div>
+                  <p className="text-muted-foreground text-lg">
+                    Нові можливості для професійного розвитку
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

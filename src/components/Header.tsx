@@ -23,12 +23,12 @@ export const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="flex items-center justify-between h-16">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/50">
+      <div className="section-container">
+        <div className="flex items-center justify-between h-20">
           {/* Logo placeholder - ready for future logo */}
-          <div className="w-32 h-8">
-            {/* Logo will be placed here */}
+          <div className="w-40 h-12 bg-muted/30 rounded-2xl flex items-center justify-center">
+            <span className="text-xs text-muted-foreground">Логотип</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -37,7 +37,7 @@ export const Header = () => {
               <button
                 key={item.label}
                 onClick={() => scrollToSection(item.href)}
-                className="text-muted-foreground hover:text-primary transition-colors font-medium"
+                className="text-muted-foreground hover:text-primary transition-colors font-medium relative py-2 px-4 rounded-full hover:bg-muted/50"
               >
                 {item.label}
               </button>
@@ -47,7 +47,7 @@ export const Header = () => {
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center">
             <Button 
-              className="bg-primary text-primary-foreground hover:bg-primary/90"
+              className="button-modern bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3"
               onClick={() => scrollToSection('#training')}
             >
               Обрати навчання
@@ -56,7 +56,7 @@ export const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2"
+            className="md:hidden p-3 rounded-full hover:bg-muted/50 transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -65,21 +65,21 @@ export const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border">
-            <nav className="flex flex-col space-y-4">
+          <div className="md:hidden py-6 border-t border-border/50 bg-background/95 backdrop-blur-md">
+            <nav className="flex flex-col space-y-2">
               {navigationItems.map((item) => (
                 <button
                   key={item.label}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-left text-muted-foreground hover:text-primary transition-colors font-medium"
+                  className="text-left text-muted-foreground hover:text-primary transition-colors font-medium py-3 px-4 rounded-2xl hover:bg-muted/50"
                 >
                   {item.label}
                 </button>
               ))}
               
-              <div className="pt-4 border-t border-border">
+              <div className="pt-4">
                 <Button 
-                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
+                  className="w-full button-modern bg-primary text-primary-foreground hover:bg-primary/90 py-3"
                   onClick={() => scrollToSection('#training')}
                 >
                   Обрати навчання

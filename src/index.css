@@ -10,81 +10,81 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 248 52% 15%;
+    --foreground: 221 39% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 248 52% 15%;
+    --card-foreground: 221 39% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 248 52% 15%;
+    --popover-foreground: 221 39% 11%;
 
-    --primary: 182 98% 28%;
+    --primary: 182 100% 27%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 79 44% 55%;
-    --secondary-foreground: 248 52% 15%;
+    --secondary-foreground: 221 39% 11%;
 
-    --muted: 218 45% 77%;
-    --muted-foreground: 248 35% 35%;
+    --muted: 220 13% 91%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 79 44% 55%;
-    --accent-foreground: 248 52% 15%;
+    --accent: 220 13% 91%;
+    --accent-foreground: 221 39% 11%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 218 45% 85%;
-    --input: 218 45% 85%;
-    --ring: 182 98% 28%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 182 100% 27%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 248 52% 15%;
-    --sidebar-primary: 182 98% 28%;
+    --sidebar-foreground: 221 39% 11%;
+    --sidebar-primary: 182 100% 27%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 218 45% 77%;
-    --sidebar-accent-foreground: 248 52% 15%;
-    --sidebar-border: 218 45% 85%;
-    --sidebar-ring: 182 98% 28%;
+    --sidebar-accent: 220 13% 91%;
+    --sidebar-accent-foreground: 221 39% 11%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 182 100% 27%;
   }
 
   .dark {
-    --background: 248 52% 15%;
+    --background: 221 39% 11%;
     --foreground: 0 0% 100%;
 
-    --card: 248 52% 15%;
+    --card: 221 39% 11%;
     --card-foreground: 0 0% 100%;
 
-    --popover: 248 52% 15%;
+    --popover: 221 39% 11%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 182 98% 28%;
+    --primary: 182 100% 27%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 248 40% 25%;
+    --secondary: 220 30% 18%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 248 40% 25%;
-    --muted-foreground: 218 45% 77%;
+    --muted: 220 30% 18%;
+    --muted-foreground: 215 20% 65%;
 
     --accent: 79 44% 55%;
-    --accent-foreground: 248 52% 15%;
+    --accent-foreground: 221 39% 11%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 248 40% 25%;
-    --input: 248 40% 25%;
-    --ring: 182 98% 28%;
-    --sidebar-background: 248 52% 15%;
+    --border: 220 30% 18%;
+    --input: 220 30% 18%;
+    --ring: 182 100% 27%;
+    --sidebar-background: 221 39% 11%;
     --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 182 98% 28%;
+    --sidebar-primary: 182 100% 27%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 248 40% 25%;
+    --sidebar-accent: 220 30% 18%;
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 248 40% 25%;
-    --sidebar-ring: 182 98% 28%;
+    --sidebar-border: 220 30% 18%;
+    --sidebar-ring: 182 100% 27%;
   }
 }
 
@@ -95,5 +95,29 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Enhanced visual components inspired by reference */
+@layer components {
+  .card-modern {
+    @apply bg-card border border-border rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300;
+  }
+  
+  .section-container {
+    @apply container mx-auto px-4 max-w-7xl;
+  }
+  
+  .gradient-bg {
+    background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+  }
+  
+  .button-modern {
+    @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:scale-105;
+  }
+  
+  .hero-card {
+    @apply relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-border/50;
   }
 }
