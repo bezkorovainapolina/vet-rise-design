@@ -27,8 +27,8 @@ export const About = () => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-slate-50 to-blue-50" id="about">
-      <div className="section-container">
+    <section className="py-24 bg-dots" id="about">
+      <div className="section-container section-content">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div className="space-y-8">
             <div className="space-y-6">

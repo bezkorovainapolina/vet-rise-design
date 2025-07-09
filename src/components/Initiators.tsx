@@ -7,7 +7,7 @@ export const Initiators = () => {
     {
       icon: Building,
       title: "Державні партнери",
-      description: "Міністерство розвитку громад та територій України підтримує ініціативу професійної перепідготовки ветеранів"
+      description: "Міністерство розвитку громад та territorій України підтримує ініціативу професійної перепідготовки ветеранів"
     },
     {
       icon: Users,
@@ -22,8 +22,8 @@ export const Initiators = () => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-slate-50 to-blue-50" id="initiators">
-      <div className="section-container">
+    <section className="py-24 bg-lines" id="initiators">
+      <div className="section-container section-content">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
             Ініціатори проєкту

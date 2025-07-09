@@ -27,8 +27,8 @@ export const Goals = () => {
   ];
 
   return (
-    <section className="py-24 bg-background" id="goals">
-      <div className="section-container">
+    <section className="py-24 bg-wave" id="goals">
+      <div className="section-container section-content">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
             Цілі проєкту
