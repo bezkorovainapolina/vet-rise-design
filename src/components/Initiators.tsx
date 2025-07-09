@@ -22,7 +22,7 @@ export const Initiators = () => {
   ];
 
   return (
-    <section className="py-24 bg-muted/30" id="initiators">
+    <section className="py-24 bg-gradient-to-br from-slate-50 to-blue-50" id="initiators">
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
@@ -35,9 +35,9 @@ export const Initiators = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {initiators.map((initiator, index) => (
-            <Card key={index} className="card-modern p-8 text-center hover:border-primary/30 group">
+            <Card key={index} className="card-modern p-8 text-center group">
               <CardContent className="p-0 space-y-6">
-                <div className="w-16 h-16 bg-primary/10 rounded-3xl mx-auto flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                <div className="w-16 h-16 bg-primary/10 rounded-full mx-auto flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                   <initiator.icon className="h-8 w-8 text-primary" />
                 </div>
                 <div className="space-y-3">

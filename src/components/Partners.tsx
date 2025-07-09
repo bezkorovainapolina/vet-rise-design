@@ -30,7 +30,7 @@ export const Partners = () => {
   ];
 
   return (
-    <section className="py-24 gradient-bg" id="partners">
+    <section className="py-24 bg-background" id="partners">
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
@@ -44,7 +44,7 @@ export const Partners = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
           {partners.map((partner, index) => (
-            <Card key={index} className="card-modern group hover:border-primary/30">
+            <Card key={index} className="card-modern group">
               <CardContent className="p-8 flex items-center justify-center h-32">
                 <img 
                   src={partner.logo} 

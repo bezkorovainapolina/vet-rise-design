@@ -49,31 +49,26 @@ export const Training = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {trainingPrograms.map((program) => (
-            <Card key={program.id} className="card-modern overflow-hidden group hover:border-primary/30">
-              <div className="aspect-[4/3] relative overflow-hidden">
+            <Card key={program.id} className="card-modern overflow-hidden group">
+              <div className="relative aspect-[4/3] overflow-hidden">
                 <img 
                   src={program.image} 
                   alt={program.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                <div className="absolute bottom-6 left-6">
-                  <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
-                    <program.icon className="h-6 w-6 text-white" />
-                  </div>
+                <div className="text-overlay">
+                  <program.icon className="inline-block w-4 h-4 mr-2" />
+                  {program.title}
                 </div>
               </div>
               
-              <CardHeader className="p-8">
-                <CardTitle className="text-xl text-foreground leading-tight mb-3">
-                  {program.title}
-                </CardTitle>
+              <CardHeader className="p-6">
                 <p className="text-muted-foreground leading-relaxed">
                   {program.description}
                 </p>
               </CardHeader>
               
-              <CardContent className="px-8 pb-8">
+              <CardContent className="px-6 pb-6">
                 <Button 
                   className="w-full button-modern bg-primary text-primary-foreground hover:bg-primary/90 group/btn"
                   size="lg"

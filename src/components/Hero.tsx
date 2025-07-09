@@ -10,9 +10,9 @@ export const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center gradient-bg pt-20">
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-blue-50 pt-20">
       <div className="section-container">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
           <div className="space-y-8">
             <div className="space-y-6">
@@ -37,13 +37,13 @@ export const Hero = () => {
             </div>
           </div>
 
-          {/* Visual Element - Replace with truck image */}
+          {/* Image Card */}
           <div className="relative">
-            <div className="hero-card p-0 h-96 overflow-hidden">
+            <div className="image-card h-96 overflow-hidden">
               <img 
                 src="/lovable-uploads/8d468f07-de4f-4b29-8f00-eea8d3c82fd3.png" 
                 alt="Вантажівка на дорозі"
-                className="w-full h-full object-cover rounded-3xl"
+                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
               />
             </div>
           </div>

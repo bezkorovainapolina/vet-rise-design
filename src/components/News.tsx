@@ -29,7 +29,7 @@ export const News = () => {
   ];
 
   return (
-    <section className="py-24 bg-background" id="news">
+    <section className="py-24 bg-gradient-to-br from-slate-50 to-blue-50" id="news">
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
@@ -42,12 +42,14 @@ export const News = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {news.map((item) => (
-            <Card key={item.id} className="card-modern group hover:border-primary/30">
+            <Card key={item.id} className="card-modern group">
               <CardHeader className="p-6">
                 <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
                   <Calendar className="h-4 w-4" />
                   <span>{item.date}</span>
-                  <span className="ml-auto px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium">
+                </div>
+                <div className="mb-3">
+                  <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium">
                     {item.category}
                   </span>
                 </div>

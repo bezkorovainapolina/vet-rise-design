@@ -27,9 +27,9 @@ export const About = () => {
   ];
 
   return (
-    <section className="py-24 bg-muted/30" id="about">
+    <section className="py-24 bg-gradient-to-br from-slate-50 to-blue-50" id="about">
       <div className="section-container">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div className="space-y-8">
             <div className="space-y-6">
               <h2 className="text-3xl md:text-5xl font-bold text-foreground">
@@ -48,9 +48,9 @@ export const About = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {features.map((feature, index) => (
-              <Card key={index} className="card-modern p-6 hover:border-primary/30 group">
+              <Card key={index} className="feature-card group hover:shadow-lg transition-all duration-300">
                 <CardContent className="p-0 space-y-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                     <feature.icon className="h-6 w-6 text-primary" />
                   </div>
                   <div className="space-y-2">
