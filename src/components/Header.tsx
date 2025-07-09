@@ -26,10 +26,8 @@ export const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/50">
       <div className="section-container">
         <div className="flex items-center justify-between h-20">
-          {/* Logo placeholder - ready for future logo */}
-          <div className="w-40 h-12 bg-muted/30 rounded-2xl flex items-center justify-center">
-            <span className="text-xs text-muted-foreground">Логотип</span>
-          </div>
+          {/* Empty space where logo was */}
+          <div className="w-40"></div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">

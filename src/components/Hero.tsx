@@ -16,10 +16,10 @@ export const Hero = () => {
           {/* Content */}
           <div className="space-y-8">
             <div className="space-y-6">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
-                Професійна 
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+                <span className="text-foreground">Професійна</span>
                 <span className="text-primary block">перепідготовка</span>
-                <span className="text-secondary">ветеранів</span>
+                <span className="text-primary">ветеранів</span>
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl leading-relaxed">
                 Безкоштовні курси для ветеранів і ветеранок України з гарантованим працевлаштуванням у сфері логістики
@@ -34,31 +34,17 @@ export const Hero = () => {
               >
                 Подати заявку
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="button-modern border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 text-lg"
-                onClick={() => document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Дізнатись більше
-              </Button>
             </div>
           </div>
 
-          {/* Visual Element */}
+          {/* Visual Element - Replace with truck image */}
           <div className="relative">
-            <div className="hero-card p-8 h-96">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/5 to-primary/5 rounded-3xl"></div>
-              <div className="relative h-full flex items-center justify-center">
-                <div className="text-center space-y-4">
-                  <div className="w-24 h-24 bg-primary/20 rounded-3xl mx-auto flex items-center justify-center">
-                    <div className="w-12 h-12 bg-primary rounded-2xl"></div>
-                  </div>
-                  <p className="text-muted-foreground text-lg">
-                    Нові можливості для професійного розвитку
-                  </p>
-                </div>
-              </div>
+            <div className="hero-card p-0 h-96 overflow-hidden">
+              <img 
+                src="/lovable-uploads/8d468f07-de4f-4b29-8f00-eea8d3c82fd3.png" 
+                alt="Вантажівка на дорозі"
+                className="w-full h-full object-cover rounded-3xl"
+              />
             </div>
           </div>
         </div>
